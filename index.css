@@ -1,0 +1,135 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    text-align: center; /* Centraliza o conteúdo em texto por padrão */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8f8f8;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu-icon span {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.logo span {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center; /* Centraliza os itens do menu */
+    background: #ffffff;
+    border-bottom: 1px solid #ddd;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ff0000;
+    padding: 10px 15px;
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #007BFF;
+}
+
+main {
+    padding: 20px;
+    text-align: center; /* Centraliza o conteúdo do main */
+}
+
+.destaques {
+    margin: 20px auto;
+    max-width: 800px; /* Limita a largura máxima */
+    text-align: center; /* Centraliza o texto */
+}
+
+.destaques h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.destaques article {
+    margin-bottom: 20px;
+    text-align: left; /* Deixa o texto alinhado à esquerda para as notícias */
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.destaques .highlight {
+    color: red;
+    font-weight: bold;
+}
+
+.destaques p {
+    color: gray;
+    margin: 10px 0;
+}
+
+.destaques img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.noticias {
+    margin: 20px auto;
+    max-width: 800px; /* Limita a largura máxima */
+    text-align: center; /* Centraliza o texto */
+}
+
+.noticias article {
+    margin-top: 20px;
+    text-align: left; /* Deixa o texto alinhado à esquerda */
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.noticias h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.logo-img {
+    width: 80px; /* Ajuste o tamanho da largura */
+    height: auto; /* Mantém a proporção da imagem */
+    display: block; /* Garante que ela seja tratada como bloco */
+    margin: 0 auto; /* Centraliza a logo horizontalmente */
+}
+
+

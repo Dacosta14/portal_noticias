@@ -1,0 +1,38 @@
+CREATE DATABASE portal_noticias;
+
+
+-- Tabela de usuários
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100),
+    email VARCHAR(100) UNIQUE,
+    senha VARCHAR(255),
+    tipo ENUM('admin', 'escritor') NOT NULL
+);
+
+-- Tabela de notícias com a coluna de imagem
+CREATE TABLE noticias (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(255),
+    conteudo TEXT,
+    autor_id INT,
+    status ENUM('pendente', 'aprovada') DEFAULT 'pendente',
+    data_publicacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    imagem VARCHAR(255), -- Adiciona a coluna para armazenar o caminho da imagem
+    FOREIGN KEY (autor_id) REFERENCES usuarios(id)
+);
+
+
+-- Inserir usuários
+INSERT INTO usuarios (nome, email, senha, tipo) 
+VALUES 
+('Administrador', 'admin@portal.com', 'senhaadmin', 'admin'),
+('Escritor 1', 'escritor1@portal.com', 'senhasescritor1', 'escritor'),
+('Escritor 2', 'escritor2@portal.com', 'senhasescritor2', 'escritor');
+
+-- Inserir notícias
+INSERT INTO noticias (titulo, conteudo, autor_id, status, imagem) 
+VALUES 
+('Notícia 1', 'Conteúdo da primeira notícia.', 1, 'aprovada'),
+('Notícia 2', 'Conteúdo da segunda notícia.', 2, 'pendente'),
+
