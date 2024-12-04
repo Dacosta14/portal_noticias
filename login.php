@@ -6,7 +6,7 @@ if (isset($_COOKIE['user_id']) && isset($_COOKIE['user_tipo'])) {
     $_SESSION['user_id'] = $_COOKIE['user_id'];
     $_SESSION['user_tipo'] = $_COOKIE['user_tipo'];
     
-    header("Location: " . ($_SESSION['user_tipo'] === 'admin' ? 'index.php' : 'index.php'));
+    header("Location: " . ($_SESSION['user_tipo'] === 'admin' ? 'admin.php' : 'escritor.php'));
     exit;
 }
 
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             setcookie('user_id', $user['id'], time() + (30 * 24 * 60 * 60), "/"); 
             setcookie('user_tipo', $user['tipo'], time() + (30 * 24 * 60 * 60), "/"); 
 
-            header("Location: " . ($user['tipo'] === 'admin' ? 'index.php' : 'index.php'));
+            header("Location: " . ($user['tipo'] === 'admin' ? 'admin.php' : 'escritor.php'));
             exit;
         } else {
 

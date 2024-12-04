@@ -1,0 +1,124 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #181818;
+  color: #e0e0e0;
+  margin: 0;
+  padding: 0;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  background-color: #232323;
+  color: #e0e0e0;
+  padding: 20px 0;
+  text-align: center;
+  height: 130px;
+}
+.header__title {
+  margin: 0;
+  font-size: 2rem;
+}
+.header__logo-box {
+  position: absolute;
+  right: 20px;
+}
+.logo-box__img {
+  max-width: 80px;
+}
+.nav {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  background: #ffffff;
+  margin: 1rem 0 0 0;
+  padding: 14px 0;
+}
+.nav__item {
+  color: #81c784;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.nav__item:hover {
+  color: #aed581;
+}
+.main {
+}
+.main__card {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #333;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.card__title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+.card__msg {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.card__msg--error {
+  color: red;
+}
+
+.card__msg--success {
+  color: green;
+}
+.card__form {
+  display: flex;
+  flex-direction: column;
+}
+.form__item {
+}
+.form__label {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+.form__input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #444;
+  color: #fff;
+}
+.form__input:focus {
+  border-color: #81c784;
+  outline: none;
+}
+.form__button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #81c784;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.form__button:hover {
+  background-color: #66bb6a;
+}
+.card__text {
+  margin-top: 15px;
+  text-align: center;
+}
+.card__link {
+ color: #87CEEB;
+}
+.footer {
+  bottom: 1rem;
+  right: 0;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  padding: 10px;
+  background-color: #232323;
+}
+.footer__text {
+  text-align: center;
+}

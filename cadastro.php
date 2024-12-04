@@ -39,203 +39,89 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro - Portal Mais Esporte</title>
     <link rel="stylesheet" href="index.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #181818;
-            color: #e0e0e0;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #232323;
-            color: #e0e0e0;
-            padding: 15px 0;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2rem;
-        }
-
-        .menu-icon span {
-            font-size: 24px;
-            display: block;
-        }
-
-        .logo img {
-            max-width: 100px;
-        }
-
-        nav {
-            background-color: #2a2a2a;
-            padding: 10px 0;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            padding: 0;
-        }
-
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: #81c784;
-            text-decoration: none;
-            font-size: 1.1rem;
-        }
-
-        nav ul li a:hover {
-            color: #aed581;
-        }
-
-        .container {
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #333;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        h2 {
-            text-align: center;
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        label {
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-
-        input, select {
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #444;
-            border-radius: 5px;
-            background-color: #444;
-            color: #fff;
-        }
-
-        input:focus, select:focus {
-            border-color: #81c784;
-            outline: none;
-        }
-
-        button {
-            padding: 10px 20px;
-            border: none;
-            background-color: #81c784;
-            color: #fff;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        button:hover {
-            background-color: #66bb6a;
-        }
-
-        p {
-            text-align: center;
-            margin-top: 15px;
-        }
-
-        .error, .success {
-            text-align: center;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-
-        .error {
-            color: red;
-        }
-
-        .success {
-            color: green;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #232323;
-        }
-
-    </style>
+    <link rel="stylesheet" href="./src/css/cadastro.css">
 </head>
+
 <body>
-
-<header>
-    <div class="menu-icon">
-        <span></span>
+  <!------------------------ HEADER ------------------------>
+  <header class="header">
+    <h1 class="header__title">Mais Esporte</h1>
+      <a class="header__logo-box" href="index.php">
+        <img 
+          class="logo-box__img" 
+          src="logoportal.jpg" 
+          alt="Logo Mais Esporte" 
+        />
+      </a>
+  </header>
+  <!------------------------ NAV ------------------------>
+  <nav class="nav">
+    <a class="nav__item" href="index.php">Início</a>
+  </nav>
+  <!------------------------ MAIN ------------------------>
+  <main class="main">
+    <div class="main__card">
+      <h2 class="card__title">Crie sua conta</h2>
+      <?php if (isset($erro)): ?>
+        <p class="card__msg card__msg--error"><?= $erro ?></p>
+      <?php endif; ?>
+      <?php if (isset($msg)): ?>
+        <p class="card__msg card__msg--success"><?= $msg ?></p>
+      <?php endif; ?>
+      <form class="card__form"method="POST">
+        <div class="form__item">
+          <label class="form__label" for="nome">Nome:</label>
+          <input 
+            class="form__input" 
+            type="text" 
+            name="nome" 
+            id="nome" 
+            required
+          >
+        </div>
+        <div class="form__item">
+          <label class="form__label" for="email">Email:</label>
+          <input 
+            class="form__input" 
+            type="email" 
+            name="email" 
+            id="email" 
+            required
+          >
+        </div>
+        <div class="form__item">
+          <label class="form__label" for="senha">Senha:</label>
+          <input 
+            class="form__input" 
+            type="password" 
+            name="senha" 
+            id="senha" 
+            required
+          >
+        </div>
+        <div class="form__item">
+          <label class="form__label" for="tipo">Tipo de Usuário:</label>
+          <select 
+            class="form__input" 
+            name="tipo" 
+            id="tipo" 
+            required
+          >
+            <option value="escritor">Escritor</option>
+          </select>
+        </div>
+        <button class="form__button" type="submit">Cadastrar</button>
+      </form>
+      <p class="card__text">
+        Já tem uma conta? <a class="card__link" href="login.php">Faça login aqui</a><!-- dark-mode  -->
+      </p>
     </div>
-    <h1>Mais Esporte</h1>
-    <div class="logo">
-        <a href="index.php">
-            <img src="logoportal.jpg" alt="Logo Mais Esporte" class="logo-img" />
-        </a>
-    </div>
-</header>
-
-<nav>
-    <ul>
-        <li><a href="index.php" class="dark-mode">Início</a></li>
-
-    </ul>
-</nav>
-
-<main>
-    <div class="container">
-        <h2>Crie sua conta</h2>
-
-        <?php if (isset($erro)): ?>
-            <p class="error"><?= $erro ?></p>
-        <?php endif; ?>
-        <?php if (isset($msg)): ?>
-            <p class="success"><?= $msg ?></p>
-        <?php endif; ?>
-
-        <form method="POST">
-            <div>
-                <label for="nome">Nome:</label>
-                <input type="text" name="nome" id="nome" required>
-            </div>
-            <div>
-                <label for="email">Email:</label>
-                <input type="email" name="email" id="email" required>
-            </div>
-            <div>
-                <label for="senha">Senha:</label>
-                <input type="password" name="senha" id="senha" required>
-            </div>
-            <div>
-                <label for="tipo">Tipo de Usuário:</label>
-                <select name="tipo" id="tipo" required>
-                    <option value="escritor">Escritor</option>
-            
-                </select>
-            </div>
-            <button type="submit">Cadastrar</button>
-        </form>
-
-        <p>Já tem uma conta? <a href="login.php" class="dark-mode">Faça login aqui</a></p>
-    </div>
-</main>
-
-<footer>
-    <p>&copy; 2024 Mais Esporte. Todos os direitos reservados.</p>
-</footer>
-
+  </main>
+  <!------------------------ FOOTER ------------------------>
+  <footer class="footer">
+    <p class="footer__text">
+        &copy; 2024 Mais Esporte. Todos os direitos reservados.
+    </p>
+  </footer>
 </body>
 </html>
