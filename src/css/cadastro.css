@@ -26,28 +26,24 @@ body {
 .logo-box__img {
   max-width: 80px;
 }
-.nav {
-  display: flex;
-  justify-content: center;
-  padding: 0;
-  background: #ffffff;
-  margin: 1rem 0 0 0;
-  padding: 14px 0;
-}
-.nav__item {
-  color: #81c784;
-  text-decoration: none;
-  font-size: 1.3rem;
-  font-weight: 700;
-}
-.nav__item:hover {
-  color: #aed581;
-}
+
 .main {
+  padding: 0;
+}
+.main__btn {
+  margin-top: 1rem;
+  padding: 10px 20px;
+  background-color: #444;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
 }
 .main__card {
   max-width: 400px;
-  margin: 0 auto;
+  margin: 1rem auto 0 auto;
   padding: 20px;
   background-color: #333;
   border-radius: 8px;
@@ -95,10 +91,12 @@ body {
 .form__button {
   padding: 10px 20px;
   border: none;
+  border-radius: 5px;
   background-color: #81c784;
   color: #fff;
+  font-size: 11px;
+  font-weight: 600;
   cursor: pointer;
-  border-radius: 5px;
 }
 .form__button:hover {
   background-color: #66bb6a;

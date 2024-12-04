@@ -45,7 +45,9 @@ nav ul {
 
 nav ul li {
     margin: 0 10px;
+    
 }
+
 
 nav ul li a {
     text-decoration: none;
@@ -77,6 +79,8 @@ main {
 }
 
 .destaques article {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 20px;
     text-align: left; /* Deixa o texto alinhado à esquerda para as notícias */
     padding: 15px;
@@ -90,7 +94,6 @@ main {
     color: red;
     font-weight: bold;
 }
-
 .destaques p {
     color: gray;
     margin: 10px 0;
@@ -103,7 +106,9 @@ main {
     border-radius: 5px;
     margin-top: 10px;
 }
-
+.destaques small {
+    margin: 1rem 0 2rem 0;
+}
 .noticias {
     margin: 20px auto;
     max-width: 800px; /* Limita a largura máxima */

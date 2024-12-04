@@ -38,8 +38,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro - Portal Mais Esporte</title>
-    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="./src/css/cadastro.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
@@ -54,12 +54,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         />
       </a>
   </header>
-  <!------------------------ NAV ------------------------>
-  <nav class="nav">
-    <a class="nav__item" href="index.php">Início</a>
-  </nav>
   <!------------------------ MAIN ------------------------>
   <main class="main">
+    <button 
+        class="main__btn" 
+        onclick="window.location.href='index.php'"
+      >
+        Voltar para o Início
+    </button>
     <div class="main__card">
       <h2 class="card__title">Crie sua conta</h2>
       <?php if (isset($erro)): ?>

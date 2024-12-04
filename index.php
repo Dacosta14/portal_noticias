@@ -1,4 +1,4 @@
-<?php
+    <?php
 session_start();
 require 'db.php';
 if (isset($_COOKIE['user_id']) && isset($_COOKIE['user_tipo'])) {
@@ -63,7 +63,7 @@ $noticias = $stmt->fetchAll();
         nav ul li {
             margin: 0 15px;
         }
-
+    
         nav ul li a {
             color: #81c784;
             text-decoration: none;
@@ -210,14 +210,14 @@ $noticias = $stmt->fetchAll();
         <h2>Destaques da Semana</h2>
         <article>
             <?php foreach ($noticias as $noticia): ?>
-                <div>
+                
                     <h3><?= $noticia['titulo'] ?></h3>
                     <p><?= $noticia['conteudo'] ?></p>
-                    <small>Publicado em: <?= $noticia['data_publicacao'] ?></small>
                     <?php if (!empty($noticia['imagem'])): ?>
                         <img src="<?= $noticia['imagem'] ?>" alt="Imagem da notícia" />
                     <?php endif; ?>
-                </div>
+                    <small>Publicado em: <?= $noticia['data_publicacao'] ?></small>
+               
             <?php endforeach; ?>
         </article>
     </section>

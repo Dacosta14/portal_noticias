@@ -52,16 +52,39 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             color: #e0e0e0;
             font-family: Arial, sans-serif;
         }
-
-        header.dark-mode, footer.dark-mode {
+        header {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            height: 130px;
+        }
+        header.dark-mode  {
             background-color: #232323;
             color: #e0e0e0;
+        }
+        footer.dark-mode {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            bottom: 1rem;
+            right: 0;
+            left: 0;
+            background-color: #232323;
+            color: #e0e0e0;
+        }
+        footer.dark-mode p {
+            margin: 0;
         }
 
         nav.dark-mode {
             background-color: #2a2a2a;
         }
-
+        .logo {
+            position: absolute;
+            right: 1rem;
+    
+        }
         a.dark-mode {
             color: #81c784;
             text-decoration: none;
@@ -70,10 +93,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         a.dark-mode:hover {
             color: #aed581;
         }
-
+        main {
+            padding: 0
+        }
         button.dark-mode {
+            margin: 1.5rem 0 ;
             background-color: #616161;
             color: #fff;
+            font-size: 11px;
+            font-weight: 600;
         }
 
         button.dark-mode:hover {
@@ -81,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         .container {
-            max-width: 500px;
+            max-width: 400px;
             margin: 0 auto;
             padding: 20px;
             background-color: #333;
@@ -179,6 +207,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 <main>
+    <button onclick="window.location.href='index.php';" class="dark-mode">Voltar para o Início</button>
     <div class="container">
         <h2>Login</h2>
 
@@ -200,7 +229,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
         <p>Não tem uma conta? <a href="cadastro.php" class="dark-mode">Crie uma aqui</a></p>
   
-        <button onclick="window.location.href='index.php';" class="dark-mode">Voltar para o Início</button>
     </div>
 </main>
 

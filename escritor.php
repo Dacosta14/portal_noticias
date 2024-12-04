@@ -49,6 +49,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criar Notícia - Portal Mais Esporte</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         body {
             background-color: #181818;
             color: #e0e0e0;
@@ -65,8 +68,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         .container {
-            max-width: 600px;
-            margin: 0 auto;
+            max-width: 400px;
+            margin: 2rem auto;
             padding: 20px;
             background-color: #333;
             border-radius: 8px;
@@ -78,7 +81,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             font-size: 2rem;
             margin-bottom: 20px;
         }
-
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
         input[type="text"], textarea {
             width: 100%;
             padding: 10px;
@@ -128,6 +135,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         button {
+            width: 30%;
             padding: 12px 20px;
             border: none;
             background-color: #81c784;
@@ -154,12 +162,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .msg.error {
             color: red;
         }
-
         footer {
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            bottom: 1rem;
+            right: 0;
+            left: 0;
+            background-color: #232323;
+            color: #e0e0e0;
             padding: 10px;
             background-color: #232323;
+   
         }
+        footer p {
+            margin: 0;
+        }
+      
 
         .btn-container {
             text-align: center;
@@ -189,10 +209,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <span id="file-name" class="file-name">Nenhum arquivo selecionado</span>
 
             <div class="btn-container">
-                <button type="submit">Enviar</button>
                 <a href="index.php">
                     <button type="button">Voltar ao Início</button>
                 </a>
+                <button type="submit">Enviar</button>
             </div>
         </form>
     </div>
