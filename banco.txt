@@ -33,6 +33,6 @@ VALUES
 -- Inserir notícias
 INSERT INTO noticias (titulo, conteudo, autor_id, status, imagem) 
 VALUES 
-('Notícia 1', 'Conteúdo da primeira notícia.', 1, 'aprovada'),
-('Notícia 2', 'Conteúdo da segunda notícia.', 2, 'pendente'),
+('Notícia 1', 'Conteúdo da primeira notícia.', 1, 'aprovada', './uploads/cachorro.jpg'),
+('Notícia 2', 'Conteúdo da segunda notícia.', 2, 'pendente', './uploads/abner.jpg')
 
